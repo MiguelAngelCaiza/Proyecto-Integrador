@@ -1,0 +1,395 @@
+<div class="container-scroller">
+
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo">
+          <span style="color: black">IGNUG</span>
+        </a>
+        <a class="navbar-brand brand-logo-mini" >
+          <span style="color: black">I</span>
+        </a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
+
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown d-none d-xl-inline-block">
+            <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <span class="profile-text">Hola, {{datosProfesor.nombre}}!</span>
+              <img class="img-xs rounded-circle" src="../../../assets/images/faces/face1.jpg" alt="Profile image">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+              <a class="dropdown-item p-0">
+                <div class="d-flex border-bottom">
+                  <div class="py-3 px-4 d-flex align-items-center justify-content-center">
+                    <i class="mdi mdi-bookmark-plus-outline mr-0 text-gray"></i>
+                  </div>
+                  <div class="py-3 px-4 d-flex align-items-center justify-content-center border-left border-right">
+                    <i class="mdi mdi-account-outline mr-0 text-gray"></i>
+                  </div>
+                  <div class="py-3 px-4 d-flex align-items-center justify-content-center">
+                    <i class="mdi mdi-alarm-check mr-0 text-gray"></i>
+                  </div>
+                </div>
+              </a>
+              <a class="dropdown-item">
+               Cerrar Sesión
+              </a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_sidebar.html -->
+
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+            <div class="nav-link">
+              <div class="user-wrapper">
+                <div class="profile-image">
+                  <img src="../../../assets/images/faces/face1.jpg" alt="profile image">
+                </div>
+                <div class="text-wrapper">
+                  <p class="profile-name">{{datosProfesor.correo}}</p>
+                  <div>
+                    <small class="designation text-muted">PROFESOR</small>
+                    <span class="status-indicator online"></span>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-success btn-block">Perfil
+                <i class="mdi mdi-heart"></i>
+              </button>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">Portafolio Docente</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+         <div class="row">
+            <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <span style="font-weight: bold;font-size: 20px">Gestión Sílabo</span><button type="button" class="btn btn-dark btn-fw" style="float: right;" (click)="regresar()">REGRESAR</button>
+                    <br><br>
+                    <div class="forms-sample">
+                      <div class="form-group">
+                        <label style="font-weight: bold; font-size: 16px">Instituto</label>
+                        <input type="text" class="form-control" [(ngModel)]="instituto" style="font-size: 14px">
+                      </div>
+                      <div class="form-group">
+                          <label style="font-weight: bold; font-size: 16px">Asignatura</label>
+                          <input type="text" class="form-control" [(ngModel)]="asignatura"  style="font-size: 14px">
+                      </div>
+                      <div class="form-group">
+                          <label style="font-weight: bold; font-size: 16px">Docente</label>
+                          <input type="text" class="form-control" [(ngModel)]="docente" style="font-size: 14px">
+                      </div>
+                    </div>
+
+                    <br>
+
+                    <div class="">
+                        <ul class="nav nav-pills">
+                          <li class="active"><a data-toggle="pill" href="#home" class="btn btn-info">1. Datos Informativos</a></li>
+                          <li><a data-toggle="pill" href="#menu1" class="btn btn-danger">2. Descripción Asignatura</a></li>
+                          <li><a data-toggle="pill" href="#menu2" class="btn btn-warning">3. Objetivo</a></li>
+                          <li><a data-toggle="pill" href="#menu3" class="btn btn-success">4. Resultado Aprendizaje</a></li>
+                          <li><a data-toggle="pill" href="#menu4" class="btn btn-default">5. Contenido Asignatura</a></li>
+                          <li><a data-toggle="pill" href="#menu5" class="btn btn-dark">6.  Estrategias</a></li>
+                          <li><a data-toggle="pill" href="#menu6" class="btn btn-primary">7. Recursos Didácticos</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div id="home" class="tab-pane fade in active">
+                            <br>
+                            <h4>Datos Informativos</h4>
+                            <br>
+                            <div class="forms-sample">
+                              <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">Periodo Lectivo</label>
+                                  <input type="text" class="form-control" [(ngModel)]="periodoLectivo" style="font-size: 14px" placeholder="Ingresar Periodo Acedémico">
+                              </div>
+                              <br>
+                              <span style="font-size: 16px; font-weight: bold">Descripción Asignatura:</span>
+                              <br><br>
+                              <div class="form-group">
+                                <span style="font-size: 14px; font-weight: bold">{{asignatura}}</span>
+                                <br><br>
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>Código Asignatura</th>
+                                      <th>Total Horas</th>
+                                      <th>Organización Curricular</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>48452</td>
+                                      <td>15</td>
+                                      <td>Descripción</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="menu1" class="tab-pane fade">
+                            <br>
+                            <h4>Asignatura</h4>
+                            <br>
+                            <div>
+                              <div class="form-group">
+                                <label style="font-weight: bold; font-size: 16px">Asignatura</label><br><br>
+                                <span>{{asignatura}}</span>
+                              </div>
+                              <div class="form-group">
+                                <label style="font-weight: bold; font-size: 16px">Descripción Asignatura</label>
+                                <textarea class="form-control" [(ngModel)]="descripcionAsignatura"  style="font-size: 14px" rows="3" placeholder="Ingresar la descripción de la asignatura seleccionada"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="menu2" class="tab-pane fade">
+                            <br>
+                            <h4>Objetivo</h4>
+                            <br>
+                           <div>
+                              <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">Objetivo de la Asignatura</label>
+                                  <textarea class="form-control" [(ngModel)]="objetivo"  style="font-size: 14px" rows="5" placeholder="Ingresar el objetivo general de la asignatura. Para definir el alcance de la materia"></textarea>
+                               </div>
+                           </div>
+                          </div>
+                          <div id="menu3" class="tab-pane fade">
+                            <br>
+                            <h4>Resultado de Aprendizaje</h4>
+                            <small>Para continuar al siguiente paso es necesario aparte de agregar los datos en cada formulario, dejar seleccionado las unidad de competencia,
+                                el elemento de competencia y el resultado de aprendizaje que desea.</small>
+                            <br><br>
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">Unidades de Competencia</label>
+                                  <kendo-dropdownlist [data]="listaUnidadesCompetencia"
+                                                      [textField]="'descripcion'"
+                                                      [valueField]="'idUnidadesCompetencia'"
+                                                      [(ngModel)]="unidadesCompetencia"
+                                                      [valuePrimitive]="true"
+                                                      style="width: 100%">
+                                    <ng-template kendoDropDownListItemTemplate let-dataItem>
+                                      <span style="font-weight: bold">{{ dataItem.numero }}</span> &nbsp;&nbsp; <span>{{ dataItem.descripcion }}</span>
+                                    </ng-template>
+                                  </kendo-dropdownlist>
+                                </div>
+                                <div>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" [(ngModel)]="numeroUnidadesCompetencia"  style="font-size: 14px" placeholder="Ingresar el Número">
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" [(ngModel)]="descripcionUnidadesCompetencia"  style="font-size: 14px" placeholder="Ingresar la Descripción">
+                                  </div>
+                                  <div class="form-group">
+                                    <button class="btn btn-primary" (click)="guardarUnidadCompetencia()" style="width: 100%">Guardar Unidad de Competencia</button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">Elementos de Competencia</label>
+                                  <kendo-dropdownlist [data]="listaElementosCompetencia"
+                                                      [textField]="'descripcion'"
+                                                      [valueField]="'idElementosCompetencia'"
+                                                      [(ngModel)]="elementosCompetencia"
+                                                      [valuePrimitive]="true"
+                                                      style="width: 100%">
+                                    <ng-template kendoDropDownListItemTemplate let-dataItem>
+                                      <span style="font-weight: bold">{{ dataItem.numero }}</span> &nbsp;&nbsp; <span>{{ dataItem.descripcion }}</span>
+                                    </ng-template>
+                                  </kendo-dropdownlist>
+                                </div>
+                                <div>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" [(ngModel)]="numeroElementosCompetencia"  style="font-size: 14px" placeholder="Ingresar el Número">
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" [(ngModel)]="descripcionElementosCompetencia"  style="font-size: 14px" placeholder="Ingresar la Descripción">
+                                  </div>
+                                  <div class="form-group">
+                                    <button class="btn btn-primary" (click)="guardarElementosCompetencia()" style="width: 100%">Guardar Elemento de Competencia</button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">Resultados de Aprendizaje</label>
+                                  <kendo-dropdownlist [data]="listaResultadosAprendizaje"
+                                                      [textField]="'descripcion'"
+                                                      [valueField]="'idResultadosAprendizaje'"
+                                                      [(ngModel)]="resultadosAprendizaje"
+                                                      [valuePrimitive]="true"
+                                                      style="width: 100%">
+                                    <ng-template kendoDropDownListItemTemplate let-dataItem>
+                                      <span style="font-weight: bold">{{ dataItem.numero }}</span> &nbsp;&nbsp; <span>{{ dataItem.descripcion }}</span>
+                                    </ng-template>
+                                  </kendo-dropdownlist>
+                                </div>
+                                <div>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" [(ngModel)]="numeroResultadosAprendizaje"  style="font-size: 14px" placeholder="Ingresar el Número">
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" [(ngModel)]="descripcionResultadosAprendizaje"  style="font-size: 14px" placeholder="Ingresar la Descripción">
+                                  </div>
+                                  <div class="form-group">
+                                    <button class="btn btn-primary" (click)="guardarResultadosAprendizaje()" style="width: 100%">Guardar Unidad de Competencia</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="menu4" class="tab-pane fade">
+                              <br>
+                              <h4>Contenido Asignatura</h4>
+                              <br>
+                              <div>
+                                <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">N° Semana</label><br>
+                                  <input type="text" class="form-control" [(ngModel)]="semana" style="font-size: 14px">
+                                </div>
+                                <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">Horas Clase</label><br>
+                                  <input type="text" class="form-control" [(ngModel)]="horaClase" style="font-size: 14px">
+                                </div>
+                                <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">Contenido de la Unidad</label>
+                                  <input type="text" class="form-control" [(ngModel)]="unidadesCompetencia" style="font-size: 14px" placeholder="Unidades de Competencia">
+                                </div>
+                                <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">Contenidos</label>
+                                  <input type="text" class="form-control" [(ngModel)]="elementosCompetencia" style="font-size: 14px" placeholder="Elementos de Competencia">
+                                </div>
+                                <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">Actividades de Docencia</label>
+                                  <input type="text" class="form-control" [(ngModel)]="resultadosAprendizaje" style="font-size: 14px" placeholder="Resultados de Aprendizaje">
+                                </div>
+                                <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">Trabajo Práctico</label>
+                                  <app-ngx-editor [config]="config" [placeholder]="'Ingresar la descrición que se realizará en el trabajo práctico'" height="150px" minHeight="150px" [(ngModel)]="trabajoPractico"></app-ngx-editor>
+                                </div>
+                                <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">Actividades Autónomas</label>
+                                  <app-ngx-editor [config]="config" [placeholder]="'Ingresar la descrición que se realizará en las actividades autónomas'" height="150px" minHeight="150px" [(ngModel)]="actividadesAutonomas"></app-ngx-editor>
+                                </div>
+                                <div class="form-group">
+                                  <label style="font-weight: bold; font-size: 16px">Observaciones</label>
+                                  <app-ngx-editor [config]="config" [placeholder]="'Ingresar una observación'" height="150px" minHeight="150px" [(ngModel)]="observacion"></app-ngx-editor>
+                                </div>
+                              </div>
+                          </div>
+                          <div id="menu5" class="tab-pane fade">
+                            <br>
+                            <h4>Estrategias</h4>
+                            <br>
+                           <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label style="font-weight: bold; font-size: 16px">Estrategias</label>
+                                <kendo-dropdownlist [data]="lstEstrategias"
+                                                    [textField]="'descripcion'"
+                                                    [valueField]="'idEstrategias'"
+                                                    [(ngModel)]="estrategias"
+                                                    [valuePrimitive]="true"
+                                                    style="width: 100%">
+                                  <ng-template kendoDropDownListItemTemplate let-dataItem>
+                                    <span>{{ dataItem.descripcion }}</span>
+                                  </ng-template>
+                                </kendo-dropdownlist>
+                              </div>
+                              <div>
+                                <div class="form-group">
+                                  <app-ngx-editor [config]="config" [placeholder]="'Ingresar Descripción Estrategia'" height="150px" minHeight="150px" [(ngModel)]="descripcionEstrategia"></app-ngx-editor>
+                                </div>
+                                <div class="form-group">
+                                  <button class="btn btn-primary" (click)="guardarEstrategia()" style="width: 100%">Guardar Estrategia</button>
+                                </div>
+                              </div>
+                            </div>
+                           </div>
+                          </div>
+                          <div id="menu6" class="tab-pane fade">
+                            <br>
+                            <h4>Recursos Didácticos</h4>
+                            <br>
+                           <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label style="font-weight: bold; font-size: 16px">Recursos Didácticos</label>
+                                <kendo-dropdownlist [data]="lstRecursosDidacticos"
+                                                    [textField]="'descripcion'"
+                                                    [valueField]="'idRecursosDidacticos'"
+                                                    [(ngModel)]="recursosDidacticos"
+                                                    [valuePrimitive]="true"
+                                                    style="width: 100%">
+                                  <ng-template kendoDropDownListItemTemplate let-dataItem>
+                                    <span>{{ dataItem.descripcion }}</span>
+                                  </ng-template>
+                                </kendo-dropdownlist>
+                              </div>
+                              <div>
+                                <div class="form-group">
+                                  <app-ngx-editor [config]="config" [placeholder]="'Ingresar Recursos Didácticos'" height="150px" minHeight="150px" [(ngModel)]="descripcionRecursoDidactico"></app-ngx-editor>
+                                </div>
+                                <div class="form-group">
+                                  <button class="btn btn-primary" (click)="guardarRecursoDidactico()" style="width: 100%">Guardar Recurso Didáctico</button>
+                                </div>
+                              </div>
+                            </div>
+                           </div>
+                          </div>
+                          <div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      <button type="button" class="btn btn-primary btn-fw" style="float: right;" (click)="guardarSilabo()">Guardar Formulario-Datos Completo</button>
+                  </div>
+                </div>
+              </div>
+         </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019
+              <a target="_blank">Yavirac</a>. Todos los derechos reservado.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Portafolio Docente
+              <i class="mdi mdi-menu text-danger"></i>
+            </span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+
+
